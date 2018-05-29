@@ -1,0 +1,44 @@
+{
+  "name": "google-font-downloader",
+  "description": "Download Google fonts by providing the url",
+  "keywords": [
+    "google",
+    "font",
+    "downloader",
+    "download",
+    "fonts",
+    "by",
+    "providing",
+    "the",
+    "url"
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
+  "homepage": "https://github.com/IonicaBizau/google-font-downloader#readme",
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "dist/",
+    "src/",
+    "scripts/",
+    "resources/",
+    "menu/",
+    "cli.js",
+    "index.js",
+    "bloggify.js",
+    "bloggify.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/IonicaBizau/google-font-downloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/google-font-downloader/issues"
+  }
+}
