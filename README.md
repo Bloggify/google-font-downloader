@@ -21,7 +21,7 @@ You can use this tool to download Google Fonts for offline use, just by providin
 You need to provide the url to the Google APIs endpoint (e.g. `https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i`) and you will get the following files/directories in the current working directory:
 
 
- - A file named `google-fonts-<timestamp>.css—this will contain the CSS snippets that you need to copy in your app. You may need to update the paths to the font files.
+ - A file named `google-fonts-<timestamp>.css`—this will contain the CSS snippets that you need to copy in your app. You may need to update the paths to the font files.
  - A directory structure looking like this: `fonts/<font-name>/<version>/<font-file>`
 
 
