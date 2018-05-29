@@ -61,10 +61,6 @@ Examples:
 Documentation can be found at https://github.com/IonicaBizau/google-font-downloader#readme.
 ```
 
-## :memo: Documentation
-
-For full API reference, see the [DOCUMENTATION.md][docs] file.
-
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
