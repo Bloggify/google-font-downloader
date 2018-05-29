@@ -69,7 +69,7 @@
       },
       {
         "ul": [
-          "A file named `google-fonts-<timestamp>.css—this will contain the CSS snippets that you need to copy in your app. You may need to update the paths to the font files.",
+          "A file named `google-fonts-<timestamp>.css`—this will contain the CSS snippets that you need to copy in your app. You may need to update the paths to the font files.",
           "A directory structure looking like this: `fonts/<font-name>/<version>/<font-file>`"
         ]
       }
