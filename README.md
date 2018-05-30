@@ -24,6 +24,7 @@ You need to provide the url to the Google APIs endpoint (e.g. `https://fonts.goo
  - A file named `google-fonts-<timestamp>.css`—this will contain the CSS snippets that you need to copy in your app. You may need to update the paths to the font files.
  - A directory structure looking like this: `fonts/<font-name>/<version>/<font-file>`
 
+![Example](https://i.imgur.com/yGcOPKg.gif)
 
 ## :cloud: Installation
 
