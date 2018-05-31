@@ -61,6 +61,6 @@ Thanks! :sweat_smile:
 
 
 
-[1]: https://github.com/IonicaBizau/google-font-downloader/issues
+[1]: https://github.com/Bloggify/google-font-downloader/issues
 
 [2]: https://github.com/IonicaBizau/code-style

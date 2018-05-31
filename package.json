@@ -16,13 +16,13 @@
     "url"
   ],
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
-  "homepage": "https://github.com/IonicaBizau/google-font-downloader#readme",
+  "homepage": "https://github.com/Bloggify/google-font-downloader#readme",
   "files": [
     "bin/",
     "app/",
@@ -39,10 +39,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/IonicaBizau/google-font-downloader.git"
+    "url": "git+ssh://git@github.com/Bloggify/google-font-downloader.git"
   },
   "bugs": {
-    "url": "https://github.com/IonicaBizau/google-font-downloader/issues"
+    "url": "https://github.com/Bloggify/google-font-downloader/issues"
   },
   "dependencies": {
     "match-all": "^1.2.4",
@@ -51,6 +51,7 @@
     "tinyreq": "^3.4.0"
   },
   "blah": {
+    "h_img": "https://i.imgur.com/arpGZH6.png",
     "description": [
       {
         "h4": "Usage"
@@ -74,7 +75,10 @@
         ]
       },
       {
-        "img": { "title": "Example", "source": "https://i.imgur.com/yGcOPKg.gif" }
+        "img": {
+          "title": "Example",
+          "source": "https://i.imgur.com/yGcOPKg.gif"
+        }
       }
     ]
   }
