@@ -54,6 +54,7 @@ Download Google fonts by providing the url
 
 Command arguments:
   <url>  The Google APIs url.
+  <css>  Css output filename [Optional]
 
 Options:
   -v, --version  Displays version information.
