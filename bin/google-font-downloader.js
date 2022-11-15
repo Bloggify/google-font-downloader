@@ -34,11 +34,17 @@ new Tilda(`${__dirname}/../package.json`, {
         desc: "Add a timestamp to the stylesheet file",
         name: "timestamp",
         default: 1,
+    }, {
+        opts: ["scss", "s"],
+        desc: "Use a scss-extension for the stylesheet for inclusion in a scss-project (default 0)",
+        name: "scss",
+        default: 0,
     }
 ]).main(action => {
     const url = action.args.url
     const directory = action.options.directory.value
     const timestamp = action.options.timestamp.value
+    const scss = action.options.scss.value
     const data = {}
     console.log(`Getting the external CSS: ${url}`)
     tinyreq({
@@ -82,7 +88,8 @@ new Tilda(`${__dirname}/../package.json`, {
         }))
     }).then(() => {
         const ts = timestamp ? `-${Date.now()}` : '';
-        const fileName = `${directory}/google-fonts${ts}.css`
+        const ext = scss ? 'scss' : 'css';
+        const fileName = `${directory}/google-fonts${ts}.${ext}`
             , cssStream = new WritableStream(fileName)
 
         console.log(`Writting the CSS into ${fileName}`)
