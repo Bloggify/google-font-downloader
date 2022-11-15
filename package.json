@@ -75,11 +75,24 @@
         ]
       },
       {
+        "p": "There are several options:"
+      },
+      {
+        "ul": [
+          "`--directory`: Directory where files are stored",
+          "`--timestamp`: Add a timestamp to the stylesheet file (default: 1)",
+          "`--scss`: Use a scss-extension for the stylesheet for inclusion in a scss-project (default: 0)"
+        ]
+      },
+      {
         "img": {
           "title": "Example",
           "source": "https://i.imgur.com/yGcOPKg.gif"
         }
       }
     ]
-  }
+  },
+  "contributors": [
+    "Jachin Francke (https://github.com/jachinfrancke)"
+  ]
 }
