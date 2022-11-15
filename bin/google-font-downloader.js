@@ -19,10 +19,19 @@ new Tilda(`${__dirname}/../package.json`, {
         }
     ],
     examples: [
-        "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i"
+        "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i",
+        "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans -d=custom/path",
     ]
-}).main(action => {
+}).option([
+    {
+        opts: ["directory", "d"],
+        desc: "Directory where files are stored",
+        name: "directory",
+        default: "./fonts",
+    }
+]).main(action => {
     const url = action.args.url
+    const directory = action.options.directory.value
     const data = {}
     console.log(`Getting the external CSS: ${url}`)
     tinyreq({
@@ -36,15 +45,17 @@ new Tilda(`${__dirname}/../package.json`, {
         data.original_stylesheet = body
         data.local_stylesheet = body
         data.font_urls = matchAll(body, matchFontFilesRegex).toArray()
-        data.local_font_paths = data.font_urls.map(c => `fonts/${c.split("/").slice(4).join("/")}`)
+        data.local_font_paths = data.font_urls.map(c => `${directory}/${c.split("/").slice(4).join("/")}`)
+        data.style_sheet_paths = data.font_urls.map(c => `./${c.split("/").slice(4).join("/")}`)
         data.fonts = data.font_urls.map((c, index) => ({
             remote: c,
-            local: data.local_font_paths[index]
+            local: data.local_font_paths[index],
+            stylesheet: data.style_sheet_paths[index],
         }))
 
         console.log(`Detected ${data.fonts.length} font files to download.`)
         return Promise.all(data.fonts.map(c => {
-            data.local_stylesheet = data.local_stylesheet.replace(c.remote, c.local)
+            data.local_stylesheet = data.local_stylesheet.replace(c.remote, c.stylesheet)
             return new Promise(res => {
                 const req = tinyreq({ url: c.remote, encoding: null, headers: { "user-agent": USER_AGENT } })
                     , stream = new WritableStream(c.local)
@@ -63,7 +74,7 @@ new Tilda(`${__dirname}/../package.json`, {
             })
         }))
     }).then(() => {
-        const fileName = `google-fonts-${Date.now()}.css`
+        const fileName = `${directory}/google-fonts-${Date.now()}.css`
             , cssStream = new WritableStream(fileName)
 
         console.log(`Writting the CSS into ${fileName}`)
