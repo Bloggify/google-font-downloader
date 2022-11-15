@@ -31,12 +31,12 @@ new Tilda(`${__dirname}/../package.json`, {
         default: "./fonts",
     }, {
         opts: ["timestamp", "t"],
-        desc: "Add a timestamp to the stylesheet file",
+        desc: "Add a timestamp to the stylesheet file (default: 1)",
         name: "timestamp",
         default: 1,
     }, {
         opts: ["scss", "s"],
-        desc: "Use a scss-extension for the stylesheet for inclusion in a scss-project (default 0)",
+        desc: "Use a scss-extension for the stylesheet for inclusion in a scss-project (default: 0)",
         name: "scss",
         default: 0,
     }
