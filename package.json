@@ -91,5 +91,8 @@
         }
       }
     ]
-  }
+  },
+  "contributors": [
+    "Jachin Francke (https://github.com/jachinfrancke)"
+  ]
 }
