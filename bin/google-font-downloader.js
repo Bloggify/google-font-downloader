@@ -21,6 +21,7 @@ new Tilda(`${__dirname}/../package.json`, {
     examples: [
         "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i",
         "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans -d=custom/path",
+        "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans -t=0",
     ]
 }).option([
     {
@@ -28,10 +29,16 @@ new Tilda(`${__dirname}/../package.json`, {
         desc: "Directory where files are stored",
         name: "directory",
         default: "./fonts",
+    }, {
+        opts: ["timestamp", "t"],
+        desc: "Add a timestamp to the stylesheet file",
+        name: "timestamp",
+        default: 1,
     }
 ]).main(action => {
     const url = action.args.url
     const directory = action.options.directory.value
+    const timestamp = action.options.timestamp.value
     const data = {}
     console.log(`Getting the external CSS: ${url}`)
     tinyreq({
@@ -74,7 +81,8 @@ new Tilda(`${__dirname}/../package.json`, {
             })
         }))
     }).then(() => {
-        const fileName = `${directory}/google-fonts-${Date.now()}.css`
+        const ts = timestamp ? `-${Date.now()}` : '';
+        const fileName = `${directory}/google-fonts${ts}.css`
             , cssStream = new WritableStream(fileName)
 
         console.log(`Writting the CSS into ${fileName}`)
