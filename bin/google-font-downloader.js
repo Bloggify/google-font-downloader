@@ -22,6 +22,8 @@ new Tilda(`${__dirname}/../package.json`, {
         "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i",
         "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans -d=custom/path",
         "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans -t=0",
+        "google-font-downloader https://fonts.googleapis.com/css?family=Open+Sans -s=1",
+        "google-font-downloader https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&family=Red+Hat+Display:wght@300..900&family=Permanent+Marker&display=swap -d=custom/path -t=0 -s=1",
     ]
 }).option([
     {
